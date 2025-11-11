@@ -231,6 +231,10 @@ const App: React.FC = () => {
     }
   }, [user, loadAllData]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
   const { userGrades, userLectureAbsences } = useMemo(() => {
     if (!user) return { userGrades: [], userLectureAbsences: [] };
     const userId = user.id.toString();
